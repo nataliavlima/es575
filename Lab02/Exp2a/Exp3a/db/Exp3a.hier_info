@@ -1,0 +1,115 @@
+|Exp3a
+SW[0] => FFT4:ff4.CLEAR
+SW[1] => FFT4:ff4.EN
+KEY[0] => ~NO_FANOUT~
+KEY[1] => FFT4:ff4.Clk
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+HEX0[0] <= Display7segBCD:disp1.disp_out[0]
+HEX0[1] <= Display7segBCD:disp1.disp_out[1]
+HEX0[2] <= Display7segBCD:disp1.disp_out[2]
+HEX0[3] <= Display7segBCD:disp1.disp_out[3]
+HEX0[4] <= Display7segBCD:disp1.disp_out[4]
+HEX0[5] <= Display7segBCD:disp1.disp_out[5]
+HEX0[6] <= Display7segBCD:disp1.disp_out[6]
+
+
+|Exp3a|FFT4:ff4
+Clk => FFT:FFT1.Clk
+Clk => FFT:FFT2.Clk
+Clk => FFT:FFT3.Clk
+Clk => FFT:FFT4.Clk
+EN => saida[0].IN1
+EN => FFT:FFT1.T
+CLEAR => FFT:FFT1.rst
+CLEAR => FFT:FFT2.rst
+CLEAR => FFT:FFT3.rst
+CLEAR => FFT:FFT4.rst
+Q[0] <= FFT:FFT1.Q
+Q[1] <= FFT:FFT2.Q
+Q[2] <= FFT:FFT3.Q
+Q[3] <= FFT:FFT4.Q
+
+
+|Exp3a|FFT4:ff4|FFT:FFT1
+Clk => tmp.CLK
+T => tmp.OUTPUTSELECT
+T => tmp.ENA
+rst => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Exp3a|FFT4:ff4|FFT:FFT2
+Clk => tmp.CLK
+T => tmp.OUTPUTSELECT
+T => tmp.ENA
+rst => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Exp3a|FFT4:ff4|FFT:FFT3
+Clk => tmp.CLK
+T => tmp.OUTPUTSELECT
+T => tmp.ENA
+rst => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Exp3a|FFT4:ff4|FFT:FFT4
+Clk => tmp.CLK
+T => tmp.OUTPUTSELECT
+T => tmp.ENA
+rst => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Exp3a|Display7segBCD:disp1
+n_in[0] => Equal0.IN3
+n_in[0] => Equal1.IN2
+n_in[0] => Equal2.IN3
+n_in[0] => Equal3.IN1
+n_in[0] => Equal4.IN3
+n_in[0] => Equal5.IN2
+n_in[0] => Equal6.IN3
+n_in[0] => Equal7.IN2
+n_in[0] => Equal8.IN3
+n_in[0] => Equal9.IN3
+n_in[1] => Equal0.IN1
+n_in[1] => Equal1.IN1
+n_in[1] => Equal2.IN2
+n_in[1] => Equal3.IN3
+n_in[1] => Equal4.IN1
+n_in[1] => Equal5.IN1
+n_in[1] => Equal6.IN2
+n_in[1] => Equal7.IN3
+n_in[1] => Equal8.IN2
+n_in[1] => Equal9.IN2
+n_in[2] => Equal0.IN0
+n_in[2] => Equal1.IN0
+n_in[2] => Equal2.IN1
+n_in[2] => Equal3.IN2
+n_in[2] => Equal4.IN2
+n_in[2] => Equal5.IN3
+n_in[2] => Equal6.IN1
+n_in[2] => Equal7.IN1
+n_in[2] => Equal8.IN1
+n_in[2] => Equal9.IN1
+n_in[3] => Equal0.IN2
+n_in[3] => Equal1.IN3
+n_in[3] => Equal2.IN0
+n_in[3] => Equal3.IN0
+n_in[3] => Equal4.IN0
+n_in[3] => Equal5.IN0
+n_in[3] => Equal6.IN0
+n_in[3] => Equal7.IN0
+n_in[3] => Equal8.IN0
+n_in[3] => Equal9.IN0
+disp_out[0] <= disp_out.DB_MAX_OUTPUT_PORT_TYPE
+disp_out[1] <= disp_out.DB_MAX_OUTPUT_PORT_TYPE
+disp_out[2] <= disp_out.DB_MAX_OUTPUT_PORT_TYPE
+disp_out[3] <= disp_out.DB_MAX_OUTPUT_PORT_TYPE
+disp_out[4] <= disp_out.DB_MAX_OUTPUT_PORT_TYPE
+disp_out[5] <= disp_out.DB_MAX_OUTPUT_PORT_TYPE
+disp_out[6] <= disp_out.DB_MAX_OUTPUT_PORT_TYPE
+
+

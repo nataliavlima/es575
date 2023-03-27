@@ -1,0 +1,76 @@
+|Exp3c
+SW[0] => counter:contador.lim[0]
+SW[1] => counter:contador.lim[1]
+SW[2] => counter:contador.lim[2]
+SW[3] => counter:contador.lim[3]
+SW[4] => counter:contador.lim[4]
+SW[5] => counter:contador.lim[5]
+SW[6] => counter:contador.lim[6]
+SW[7] => counter:contador.lim[7]
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+SW[10] => ~NO_FANOUT~
+SW[11] => ~NO_FANOUT~
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => ~NO_FANOUT~
+SW[15] => ~NO_FANOUT~
+SW[16] => ~NO_FANOUT~
+SW[17] => ~NO_FANOUT~
+KEY[0] => counter:contador.rst
+KEY[1] => counter:contador.CLK
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+LEDR[0] << counter:contador.Q[0]
+LEDR[1] << counter:contador.Q[1]
+LEDR[2] << counter:contador.Q[2]
+LEDR[3] << counter:contador.Q[3]
+LEDR[4] << counter:contador.Q[4]
+LEDR[5] << counter:contador.Q[5]
+LEDR[6] << counter:contador.Q[6]
+LEDR[7] << counter:contador.Q[7]
+
+
+|Exp3c|counter:contador
+CLK => tmp[0].CLK
+CLK => tmp[1].CLK
+CLK => tmp[2].CLK
+CLK => tmp[3].CLK
+CLK => tmp[4].CLK
+CLK => tmp[5].CLK
+CLK => tmp[6].CLK
+CLK => tmp[7].CLK
+rst => tmp[0].ACLR
+rst => tmp[1].ACLR
+rst => tmp[2].ACLR
+rst => tmp[3].ACLR
+rst => tmp[4].ACLR
+rst => tmp[5].ACLR
+rst => tmp[6].ACLR
+rst => tmp[7].ACLR
+lim[0] => LessThan1.IN16
+lim[0] => Add1.IN16
+lim[1] => LessThan1.IN15
+lim[1] => Add1.IN15
+lim[2] => LessThan1.IN14
+lim[2] => Add1.IN14
+lim[3] => LessThan1.IN13
+lim[3] => Add1.IN13
+lim[4] => LessThan1.IN12
+lim[4] => Add1.IN12
+lim[5] => LessThan1.IN11
+lim[5] => Add1.IN11
+lim[6] => LessThan1.IN10
+lim[6] => Add1.IN10
+lim[7] => LessThan1.IN9
+lim[7] => Add1.IN9
+Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= tmp[4].DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= tmp[5].DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= tmp[6].DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= tmp[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\aluno\Desktop\Marienati\Exp2b\simulation\qsim
+vExp2b
+Z1 !s100 O^@RLXP?<JT4]bGQeaGAk0
+Z2 IN2AW[i`74PQ<DgVjQYc^Z1
+Z3 VD4KhOzAKi=fd:dKRcFa]@3
+Z4 dC:\Users\aluno\Desktop\Marienati\Exp2b\simulation\qsim
+Z5 w1678547050
+Z6 8Exp2b.vo
+Z7 FExp2b.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|Exp2b.vo|
+Z10 o-work work -O0
+Z11 n@exp2b
+!i10b 1
+!s85 0
+Z12 !s108 1678547051.348000
+Z13 !s107 Exp2b.vo|
+!s101 -O0
+vExp2b_vlg_check_tst
+!i10b 1
+Z14 !s100 HkLJ^4^H7ANS9ZJNE;_P32
+Z15 IQ5XEa708`nQYeVR24:gkk1
+Z16 V1QSVzOLF8CG]EAadj6Uo;1
+R4
+Z17 w1678547049
+Z18 8Waveform.vwf.vt
+Z19 FWaveform.vwf.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z20 !s108 1678547051.489000
+Z21 !s107 Waveform.vwf.vt|
+Z22 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+Z23 n@exp2b_vlg_check_tst
+vExp2b_vlg_sample_tst
+!i10b 1
+Z24 !s100 N`N:^nLklGbO_[5ZzV3eT2
+Z25 IAFab4d]FFoDoXCoiA2D^[3
+Z26 V[YPbL@YlGeYS39d5jzUbi3
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@exp2b_vlg_sample_tst
+vExp2b_vlg_vec_tst
+!i10b 1
+Z28 !s100 7E:ZEndz@<f<Pb29cK9_e0
+Z29 IRCGkcSHDCz<6[S3iO7RI61
+Z30 VfHEcg`39ife9o]Z^e>Fng3
+R4
+R17
+R18
+R19
+Z31 L0 399
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z32 n@exp2b_vlg_vec_tst

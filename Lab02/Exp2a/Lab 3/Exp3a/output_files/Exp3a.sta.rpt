@@ -1,0 +1,1271 @@
+TimeQuest Timing Analyzer report for Exp3a
+Sat Mar 25 11:08:10 2023
+Quartus II 64-Bit Version 13.1.4 Build 182 03/12/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'KEY[1]'
+ 13. Slow 1200mV 85C Model Hold: 'KEY[1]'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'KEY[1]'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Slow 1200mV 85C Model Metastability Report
+ 20. Slow 1200mV 0C Model Fmax Summary
+ 21. Slow 1200mV 0C Model Setup Summary
+ 22. Slow 1200mV 0C Model Hold Summary
+ 23. Slow 1200mV 0C Model Recovery Summary
+ 24. Slow 1200mV 0C Model Removal Summary
+ 25. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 26. Slow 1200mV 0C Model Setup: 'KEY[1]'
+ 27. Slow 1200mV 0C Model Hold: 'KEY[1]'
+ 28. Slow 1200mV 0C Model Minimum Pulse Width: 'KEY[1]'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Slow 1200mV 0C Model Metastability Report
+ 34. Fast 1200mV 0C Model Setup Summary
+ 35. Fast 1200mV 0C Model Hold Summary
+ 36. Fast 1200mV 0C Model Recovery Summary
+ 37. Fast 1200mV 0C Model Removal Summary
+ 38. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 39. Fast 1200mV 0C Model Setup: 'KEY[1]'
+ 40. Fast 1200mV 0C Model Hold: 'KEY[1]'
+ 41. Fast 1200mV 0C Model Minimum Pulse Width: 'KEY[1]'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Fast 1200mV 0C Model Metastability Report
+ 47. Multicorner Timing Analysis Summary
+ 48. Setup Times
+ 49. Hold Times
+ 50. Clock to Output Times
+ 51. Minimum Clock to Output Times
+ 52. Board Trace Model Assignments
+ 53. Input Transition Times
+ 54. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 55. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 56. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 57. Setup Transfers
+ 58. Hold Transfers
+ 59. Report TCCS
+ 60. Report RSKM
+ 61. Unconstrained Paths
+ 62. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.4 Build 182 03/12/2014 SJ Web Edition ;
+; Revision Name      ; Exp3a                                              ;
+; Device Family      ; Cyclone IV GX                                      ;
+; Device Name        ; EP4CGX150DF31C7                                    ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Enabled                                            ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; KEY[1]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY[1] } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 683.99 MHz ; 250.0 MHz       ; KEY[1]     ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++--------+--------+-------------------+
+; Clock  ; Slack  ; End Point TNS     ;
++--------+--------+-------------------+
+; KEY[1] ; -0.462 ; -0.659            ;
++--------+--------+-------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++--------+-------+-------------------+
+; Clock  ; Slack ; End Point TNS     ;
++--------+-------+-------------------+
+; KEY[1] ; 0.440 ; 0.000             ;
++--------+-------+-------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++--------+--------+---------------------------------+
+; Clock  ; Slack  ; End Point TNS                   ;
++--------+--------+---------------------------------+
+; KEY[1] ; -3.000 ; -9.000                          ;
++--------+--------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'KEY[1]'                                                                                        ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; -0.462 ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.050     ; 1.430      ;
+; -0.425 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.050     ; 1.393      ;
+; -0.215 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.050     ; 1.183      ;
+; -0.197 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.050     ; 1.165      ;
+; 0.134  ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.050     ; 0.834      ;
+; 0.134  ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.050     ; 0.834      ;
+; 0.210  ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT1|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 0.765      ;
+; 0.210  ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 0.765      ;
+; 0.210  ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 0.765      ;
+; 0.210  ; FFT4:ff4|FFT:FFT4|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 0.765      ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'KEY[1]'                                                                                        ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.440 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT1|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; FFT4:ff4|FFT:FFT4|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.669      ;
+; 0.483 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.050      ; 0.719      ;
+; 0.484 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.050      ; 0.720      ;
+; 0.732 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.050      ; 0.968      ;
+; 0.828 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.050      ; 1.064      ;
+; 0.976 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.050      ; 1.212      ;
+; 1.031 ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.050      ; 1.267      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'KEY[1]'                                                     ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; KEY[1] ; Rise       ; KEY[1]                ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT1|tmp ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT2|tmp ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT3|tmp ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT4|tmp ;
+; 0.062  ; 0.250        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT1|tmp ;
+; 0.062  ; 0.250        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT2|tmp ;
+; 0.062  ; 0.250        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT3|tmp ;
+; 0.062  ; 0.250        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT4|tmp ;
+; 0.215  ; 0.215        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT1|tmp|clk      ;
+; 0.215  ; 0.215        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT2|tmp|clk      ;
+; 0.215  ; 0.215        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT3|tmp|clk      ;
+; 0.215  ; 0.215        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT4|tmp|clk      ;
+; 0.394  ; 0.394        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|o        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|i        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|i        ;
+; 0.525  ; 0.745        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT1|tmp ;
+; 0.525  ; 0.745        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT2|tmp ;
+; 0.525  ; 0.745        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT3|tmp ;
+; 0.525  ; 0.745        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT4|tmp ;
+; 0.606  ; 0.606        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|o        ;
+; 0.781  ; 0.781        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT1|tmp|clk      ;
+; 0.781  ; 0.781        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT2|tmp|clk      ;
+; 0.781  ; 0.781        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT3|tmp|clk      ;
+; 0.781  ; 0.781        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT4|tmp|clk      ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; 1.785 ; 2.330 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; 1.785 ; 2.330 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; -0.545 ; -1.047 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; -0.545 ; -1.047 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; KEY[1]     ; 13.033 ; 12.917 ; Rise       ; KEY[1]          ;
+;  HEX0[0]  ; KEY[1]     ; 11.136 ; 11.062 ; Rise       ; KEY[1]          ;
+;  HEX0[1]  ; KEY[1]     ; 12.081 ; 12.020 ; Rise       ; KEY[1]          ;
+;  HEX0[2]  ; KEY[1]     ; 13.033 ; 12.917 ; Rise       ; KEY[1]          ;
+;  HEX0[3]  ; KEY[1]     ; 12.013 ; 12.002 ; Rise       ; KEY[1]          ;
+;  HEX0[4]  ; KEY[1]     ; 10.621 ; 10.598 ; Rise       ; KEY[1]          ;
+;  HEX0[5]  ; KEY[1]     ; 10.658 ; 10.615 ; Rise       ; KEY[1]          ;
+;  HEX0[6]  ; KEY[1]     ; 11.156 ; 11.065 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; KEY[1]     ; 9.641  ; 9.525  ; Rise       ; KEY[1]          ;
+;  HEX0[0]  ; KEY[1]     ; 10.099 ; 9.989  ; Rise       ; KEY[1]          ;
+;  HEX0[1]  ; KEY[1]     ; 11.012 ; 10.916 ; Rise       ; KEY[1]          ;
+;  HEX0[2]  ; KEY[1]     ; 11.923 ; 11.885 ; Rise       ; KEY[1]          ;
+;  HEX0[3]  ; KEY[1]     ; 10.918 ; 10.894 ; Rise       ; KEY[1]          ;
+;  HEX0[4]  ; KEY[1]     ; 9.659  ; 9.525  ; Rise       ; KEY[1]          ;
+;  HEX0[5]  ; KEY[1]     ; 9.641  ; 9.561  ; Rise       ; KEY[1]          ;
+;  HEX0[6]  ; KEY[1]     ; 10.150 ; 10.041 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 763.94 MHz ; 250.0 MHz       ; KEY[1]     ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++--------+--------+------------------+
+; Clock  ; Slack  ; End Point TNS    ;
++--------+--------+------------------+
+; KEY[1] ; -0.309 ; -0.381           ;
++--------+--------+------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++--------+-------+------------------+
+; Clock  ; Slack ; End Point TNS    ;
++--------+-------+------------------+
+; KEY[1] ; 0.387 ; 0.000            ;
++--------+-------+------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; KEY[1] ; -3.000 ; -9.000                         ;
++--------+--------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'KEY[1]'                                                                                         ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; -0.309 ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.042     ; 1.286      ;
+; -0.282 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.042     ; 1.259      ;
+; -0.092 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.042     ; 1.069      ;
+; -0.072 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.042     ; 1.049      ;
+; 0.220  ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.042     ; 0.757      ;
+; 0.220  ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.042     ; 0.757      ;
+; 0.297  ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT1|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 0.683      ;
+; 0.297  ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 0.683      ;
+; 0.297  ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 0.683      ;
+; 0.297  ; FFT4:ff4|FFT:FFT4|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 0.683      ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'KEY[1]'                                                                                         ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.387 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT1|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; FFT4:ff4|FFT:FFT4|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.597      ;
+; 0.438 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.042      ; 0.651      ;
+; 0.439 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.042      ; 0.652      ;
+; 0.678 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.042      ; 0.891      ;
+; 0.756 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.042      ; 0.969      ;
+; 0.896 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.042      ; 1.109      ;
+; 0.940 ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.042      ; 1.153      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'KEY[1]'                                                      ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; KEY[1] ; Rise       ; KEY[1]                ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT1|tmp ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT2|tmp ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT3|tmp ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT4|tmp ;
+; 0.274  ; 0.460        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT1|tmp ;
+; 0.274  ; 0.460        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT2|tmp ;
+; 0.274  ; 0.460        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT3|tmp ;
+; 0.274  ; 0.460        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT4|tmp ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT1|tmp ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT2|tmp ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT3|tmp ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT4|tmp ;
+; 0.416  ; 0.416        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|o        ;
+; 0.422  ; 0.422        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT1|tmp|clk      ;
+; 0.422  ; 0.422        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT2|tmp|clk      ;
+; 0.422  ; 0.422        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT3|tmp|clk      ;
+; 0.422  ; 0.422        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT4|tmp|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|i        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|i        ;
+; 0.575  ; 0.575        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT1|tmp|clk      ;
+; 0.575  ; 0.575        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT2|tmp|clk      ;
+; 0.575  ; 0.575        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT3|tmp|clk      ;
+; 0.575  ; 0.575        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT4|tmp|clk      ;
+; 0.584  ; 0.584        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|o        ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; 1.455 ; 1.773 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; 1.455 ; 1.773 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; -0.319 ; -0.617 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; -0.319 ; -0.617 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; KEY[1]     ; 11.808 ; 11.839 ; Rise       ; KEY[1]          ;
+;  HEX0[0]  ; KEY[1]     ; 10.255 ; 10.105 ; Rise       ; KEY[1]          ;
+;  HEX0[1]  ; KEY[1]     ; 11.105 ; 10.962 ; Rise       ; KEY[1]          ;
+;  HEX0[2]  ; KEY[1]     ; 11.808 ; 11.839 ; Rise       ; KEY[1]          ;
+;  HEX0[3]  ; KEY[1]     ; 11.055 ; 10.985 ; Rise       ; KEY[1]          ;
+;  HEX0[4]  ; KEY[1]     ; 9.769  ; 9.690  ; Rise       ; KEY[1]          ;
+;  HEX0[5]  ; KEY[1]     ; 9.800  ; 9.707  ; Rise       ; KEY[1]          ;
+;  HEX0[6]  ; KEY[1]     ; 10.234 ; 10.127 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; KEY[1]     ; 8.849  ; 8.736  ; Rise       ; KEY[1]          ;
+;  HEX0[0]  ; KEY[1]     ; 9.284  ; 9.150  ; Rise       ; KEY[1]          ;
+;  HEX0[1]  ; KEY[1]     ; 10.133 ; 9.977  ; Rise       ; KEY[1]          ;
+;  HEX0[2]  ; KEY[1]     ; 10.820 ; 10.875 ; Rise       ; KEY[1]          ;
+;  HEX0[3]  ; KEY[1]     ; 10.058 ; 9.960  ; Rise       ; KEY[1]          ;
+;  HEX0[4]  ; KEY[1]     ; 8.870  ; 8.736  ; Rise       ; KEY[1]          ;
+;  HEX0[5]  ; KEY[1]     ; 8.849  ; 8.768  ; Rise       ; KEY[1]          ;
+;  HEX0[6]  ; KEY[1]     ; 9.335  ; 9.197  ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++--------+-------+-------------------+
+; Clock  ; Slack ; End Point TNS     ;
++--------+-------+-------------------+
+; KEY[1] ; 0.292 ; 0.000             ;
++--------+-------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++--------+-------+------------------+
+; Clock  ; Slack ; End Point TNS    ;
++--------+-------+------------------+
+; KEY[1] ; 0.201 ; 0.000            ;
++--------+-------+------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; KEY[1] ; -3.000 ; -9.160                         ;
++--------+--------+--------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'KEY[1]'                                                                                        ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.292 ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.024     ; 0.691      ;
+; 0.312 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.024     ; 0.671      ;
+; 0.413 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.024     ; 0.570      ;
+; 0.418 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.024     ; 0.565      ;
+; 0.588 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.024     ; 0.395      ;
+; 0.588 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.024     ; 0.395      ;
+; 0.626 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT1|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 0.359      ;
+; 0.626 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 0.359      ;
+; 0.626 ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 0.359      ;
+; 0.626 ; FFT4:ff4|FFT:FFT4|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 0.359      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'KEY[1]'                                                                                         ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.201 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT1|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.307      ;
+; 0.201 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.307      ;
+; 0.201 ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.307      ;
+; 0.201 ; FFT4:ff4|FFT:FFT4|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.307      ;
+; 0.224 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT2|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.024      ; 0.332      ;
+; 0.225 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.024      ; 0.333      ;
+; 0.344 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT3|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.024      ; 0.452      ;
+; 0.379 ; FFT4:ff4|FFT:FFT1|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.024      ; 0.487      ;
+; 0.452 ; FFT4:ff4|FFT:FFT2|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.024      ; 0.560      ;
+; 0.476 ; FFT4:ff4|FFT:FFT3|tmp ; FFT4:ff4|FFT:FFT4|tmp ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.024      ; 0.584      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'KEY[1]'                                                      ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; KEY[1] ; Rise       ; KEY[1]                ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT1|tmp ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT2|tmp ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT3|tmp ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT4|tmp ;
+; -0.360 ; -0.176       ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT1|tmp ;
+; -0.360 ; -0.176       ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT2|tmp ;
+; -0.360 ; -0.176       ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT3|tmp ;
+; -0.360 ; -0.176       ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT4|tmp ;
+; -0.180 ; -0.180       ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT1|tmp|clk      ;
+; -0.180 ; -0.180       ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT2|tmp|clk      ;
+; -0.180 ; -0.180       ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT3|tmp|clk      ;
+; -0.180 ; -0.180       ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; ff4|FFT4|tmp|clk      ;
+; 0.120  ; 0.120        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|o        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|i        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|i        ;
+; 0.880  ; 0.880        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|o        ;
+; 0.948  ; 1.164        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT1|tmp ;
+; 0.948  ; 1.164        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT2|tmp ;
+; 0.948  ; 1.164        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT3|tmp ;
+; 0.948  ; 1.164        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; FFT4:ff4|FFT:FFT4|tmp ;
+; 1.170  ; 1.170        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT1|tmp|clk      ;
+; 1.170  ; 1.170        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT2|tmp|clk      ;
+; 1.170  ; 1.170        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT3|tmp|clk      ;
+; 1.170  ; 1.170        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; ff4|FFT4|tmp|clk      ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; 0.957 ; 1.743 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; 0.957 ; 1.743 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; -0.354 ; -1.100 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; -0.354 ; -1.100 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX0[*]   ; KEY[1]     ; 7.086 ; 6.828 ; Rise       ; KEY[1]          ;
+;  HEX0[0]  ; KEY[1]     ; 5.706 ; 5.799 ; Rise       ; KEY[1]          ;
+;  HEX0[1]  ; KEY[1]     ; 6.216 ; 6.362 ; Rise       ; KEY[1]          ;
+;  HEX0[2]  ; KEY[1]     ; 7.086 ; 6.828 ; Rise       ; KEY[1]          ;
+;  HEX0[3]  ; KEY[1]     ; 6.206 ; 6.346 ; Rise       ; KEY[1]          ;
+;  HEX0[4]  ; KEY[1]     ; 5.421 ; 5.538 ; Rise       ; KEY[1]          ;
+;  HEX0[5]  ; KEY[1]     ; 5.449 ; 5.555 ; Rise       ; KEY[1]          ;
+;  HEX0[6]  ; KEY[1]     ; 5.734 ; 5.811 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX0[*]   ; KEY[1]     ; 4.953 ; 4.975 ; Rise       ; KEY[1]          ;
+;  HEX0[0]  ; KEY[1]     ; 5.175 ; 5.236 ; Rise       ; KEY[1]          ;
+;  HEX0[1]  ; KEY[1]     ; 5.650 ; 5.779 ; Rise       ; KEY[1]          ;
+;  HEX0[2]  ; KEY[1]     ; 6.502 ; 6.336 ; Rise       ; KEY[1]          ;
+;  HEX0[3]  ; KEY[1]     ; 5.625 ; 5.766 ; Rise       ; KEY[1]          ;
+;  HEX0[4]  ; KEY[1]     ; 4.953 ; 4.975 ; Rise       ; KEY[1]          ;
+;  HEX0[5]  ; KEY[1]     ; 4.969 ; 5.003 ; Rise       ; KEY[1]          ;
+;  HEX0[6]  ; KEY[1]     ; 5.201 ; 5.267 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -0.462 ; 0.201 ; N/A      ; N/A     ; -3.000              ;
+;  KEY[1]          ; -0.462 ; 0.201 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -0.659 ; 0.0   ; 0.0      ; 0.0     ; -9.16               ;
+;  KEY[1]          ; -0.659 ; 0.000 ; N/A      ; N/A     ; -9.160              ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; 1.785 ; 2.330 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; 1.785 ; 2.330 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; -0.319 ; -0.617 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; -0.319 ; -0.617 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; KEY[1]     ; 13.033 ; 12.917 ; Rise       ; KEY[1]          ;
+;  HEX0[0]  ; KEY[1]     ; 11.136 ; 11.062 ; Rise       ; KEY[1]          ;
+;  HEX0[1]  ; KEY[1]     ; 12.081 ; 12.020 ; Rise       ; KEY[1]          ;
+;  HEX0[2]  ; KEY[1]     ; 13.033 ; 12.917 ; Rise       ; KEY[1]          ;
+;  HEX0[3]  ; KEY[1]     ; 12.013 ; 12.002 ; Rise       ; KEY[1]          ;
+;  HEX0[4]  ; KEY[1]     ; 10.621 ; 10.598 ; Rise       ; KEY[1]          ;
+;  HEX0[5]  ; KEY[1]     ; 10.658 ; 10.615 ; Rise       ; KEY[1]          ;
+;  HEX0[6]  ; KEY[1]     ; 11.156 ; 11.065 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX0[*]   ; KEY[1]     ; 4.953 ; 4.975 ; Rise       ; KEY[1]          ;
+;  HEX0[0]  ; KEY[1]     ; 5.175 ; 5.236 ; Rise       ; KEY[1]          ;
+;  HEX0[1]  ; KEY[1]     ; 5.650 ; 5.779 ; Rise       ; KEY[1]          ;
+;  HEX0[2]  ; KEY[1]     ; 6.502 ; 6.336 ; Rise       ; KEY[1]          ;
+;  HEX0[3]  ; KEY[1]     ; 5.625 ; 5.766 ; Rise       ; KEY[1]          ;
+;  HEX0[4]  ; KEY[1]     ; 4.953 ; 4.975 ; Rise       ; KEY[1]          ;
+;  HEX0[5]  ; KEY[1]     ; 4.969 ; 5.003 ; Rise       ; KEY[1]          ;
+;  HEX0[6]  ; KEY[1]     ; 5.201 ; 5.267 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; HEX0[0]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[1]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[2]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[3]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[4]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[5]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[6]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++------------------------------------------------------------------------+
+; Input Transition Times                                                 ;
++---------------------+--------------+-----------------+-----------------+
+; Pin                 ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++---------------------+--------------+-----------------+-----------------+
+; KEY[0]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[2]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[3]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[1]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[1]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[0]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_NCSO~       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++---------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; HEX0[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; HEX0[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; HEX0[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.33 V              ; -0.00467 V          ; 0.226 V                              ; 0.087 V                              ; 2.91e-09 s                  ; 2.74e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.33 V             ; -0.00467 V         ; 0.226 V                             ; 0.087 V                             ; 2.91e-09 s                 ; 2.74e-09 s                 ; Yes                       ; Yes                       ;
+; HEX0[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; HEX0[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; HEX0[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; HEX0[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.59e-09 V                   ; 2.37 V              ; -0.038 V            ; 0.188 V                              ; 0.093 V                              ; 3.06e-10 s                  ; 2.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.59e-09 V                  ; 2.37 V             ; -0.038 V           ; 0.188 V                             ; 0.093 V                             ; 3.06e-10 s                 ; 2.83e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; HEX0[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.33 V              ; -0.00265 V          ; 0.133 V                              ; 0.056 V                              ; 3.55e-09 s                  ; 3.31e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.33 V             ; -0.00265 V         ; 0.133 V                             ; 0.056 V                             ; 3.55e-09 s                 ; 3.31e-09 s                 ; Yes                       ; Yes                       ;
+; HEX0[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.55e-07 V                   ; 2.35 V              ; -0.00881 V          ; 0.093 V                              ; 0.011 V                              ; 4.44e-10 s                  ; 3.77e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.55e-07 V                  ; 2.35 V             ; -0.00881 V         ; 0.093 V                             ; 0.011 V                             ; 4.44e-10 s                 ; 3.77e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; HEX0[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.64 V              ; -0.0113 V           ; 0.208 V                              ; 0.179 V                              ; 2.38e-09 s                  ; 2.23e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.64 V             ; -0.0113 V          ; 0.208 V                             ; 0.179 V                             ; 2.38e-09 s                 ; 2.23e-09 s                 ; No                        ; Yes                       ;
+; HEX0[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.26e-08 V                   ; 2.73 V              ; -0.0622 V           ; 0.148 V                              ; 0.088 V                              ; 2.68e-10 s                  ; 2.25e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.26e-08 V                  ; 2.73 V             ; -0.0622 V          ; 0.148 V                             ; 0.088 V                             ; 2.68e-10 s                 ; 2.25e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY[1]     ; KEY[1]   ; 10       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY[1]     ; KEY[1]   ; 10       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 8     ; 8    ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 28    ; 28   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.4 Build 182 03/12/2014 SJ Web Edition
+    Info: Processing started: Sat Mar 25 11:08:07 2023
+Info: Command: quartus_sta Exp3a -c Exp3a
+Info: qsta_default_script.tcl version: #1
+Warning (20013): Ignored assignments for entity "de2i150" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name VIRTUAL_PIN ON -to FS_ADDR[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to CLOCK3_50 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CAS_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CKE -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CS_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[16] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[17] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[18] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[19] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[20] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[21] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[22] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[23] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[24] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[25] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[26] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[27] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[28] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[29] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[30] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[31] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_RAS_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_WE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to EEP_I2C_SCLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to EEP_I2C_SDAT -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_GTX_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_INT_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_LINK100 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_MDC -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_MDIO -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RST_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_COL -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_CRS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_DATA[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_DATA[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_DATA[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_DATA[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_DV -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_ER -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_DATA[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_DATA[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_DATA[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_DATA[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_EN -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_ER -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to FAN_CTRL -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_CE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_OE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_RESET_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_RY -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_WE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_WP_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[13] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[14] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[15] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[16] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[17] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[18] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[19] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[20] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[21] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[22] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[23] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[24] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[25] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[26] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[13] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[14] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[15] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[16] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[17] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[18] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[19] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[20] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[21] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[22] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[23] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[24] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[25] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[26] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[27] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[28] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[29] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[30] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[31] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to G_SENSOR_INT1 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to G_SENSOR_SCLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to G_SENSOR_SDAT -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to I2C_SCLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to I2C_SDAT -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRDA_RXD -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to KEY[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to KEY[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to KEY[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to KEY[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_EN -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LCD_ON -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_RS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_RW -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[13] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[14] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[15] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[16] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[17] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to PCIE_PERST_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD HCSL -to PCIE_REFCLK_P -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to PCIE_RX_P[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to PCIE_RX_P[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to PCIE_TX_P[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to PCIE_TX_P[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to PCIE_WAKE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_CMD -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_WP_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SMA_CLKIN -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SMA_CLKOUT -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM0_CE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM1_CE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_ADSC_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_ADSP_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_ADV_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_BE[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_BE[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_BE[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_BE[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_GW_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_OE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_WE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[13] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[14] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[15] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[16] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[17] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_CLK27 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_HS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_RESET_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_VS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_CTS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_RTS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_RXD -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_TXD -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_BLANK_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity de2i150 was ignored
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Exp3a.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name KEY[1] KEY[1]
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.462
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.462              -0.659 KEY[1] 
+Info (332146): Worst-case hold slack is 0.440
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.440               0.000 KEY[1] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -9.000 KEY[1] 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.309
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.309              -0.381 KEY[1] 
+Info (332146): Worst-case hold slack is 0.387
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.387               0.000 KEY[1] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -9.000 KEY[1] 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332146): Worst-case setup slack is 0.292
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.292               0.000 KEY[1] 
+Info (332146): Worst-case hold slack is 0.201
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.201               0.000 KEY[1] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -9.160 KEY[1] 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 353 warnings
+    Info: Peak virtual memory: 4703 megabytes
+    Info: Processing ended: Sat Mar 25 11:08:10 2023
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

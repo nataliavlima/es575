@@ -1,0 +1,1739 @@
+TimeQuest Timing Analyzer report for Exp3c
+Sat Mar 25 13:06:28 2023
+Quartus II 64-Bit Version 13.1.4 Build 182 03/12/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'KEY[1]'
+ 13. Slow 1200mV 85C Model Hold: 'KEY[1]'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'KEY[1]'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Slow 1200mV 85C Model Metastability Report
+ 20. Slow 1200mV 0C Model Fmax Summary
+ 21. Slow 1200mV 0C Model Setup Summary
+ 22. Slow 1200mV 0C Model Hold Summary
+ 23. Slow 1200mV 0C Model Recovery Summary
+ 24. Slow 1200mV 0C Model Removal Summary
+ 25. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 26. Slow 1200mV 0C Model Setup: 'KEY[1]'
+ 27. Slow 1200mV 0C Model Hold: 'KEY[1]'
+ 28. Slow 1200mV 0C Model Minimum Pulse Width: 'KEY[1]'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Slow 1200mV 0C Model Metastability Report
+ 34. Fast 1200mV 0C Model Setup Summary
+ 35. Fast 1200mV 0C Model Hold Summary
+ 36. Fast 1200mV 0C Model Recovery Summary
+ 37. Fast 1200mV 0C Model Removal Summary
+ 38. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 39. Fast 1200mV 0C Model Setup: 'KEY[1]'
+ 40. Fast 1200mV 0C Model Hold: 'KEY[1]'
+ 41. Fast 1200mV 0C Model Minimum Pulse Width: 'KEY[1]'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Fast 1200mV 0C Model Metastability Report
+ 47. Multicorner Timing Analysis Summary
+ 48. Setup Times
+ 49. Hold Times
+ 50. Clock to Output Times
+ 51. Minimum Clock to Output Times
+ 52. Board Trace Model Assignments
+ 53. Input Transition Times
+ 54. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 55. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 56. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 57. Setup Transfers
+ 58. Hold Transfers
+ 59. Report TCCS
+ 60. Report RSKM
+ 61. Unconstrained Paths
+ 62. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.4 Build 182 03/12/2014 SJ Web Edition ;
+; Revision Name      ; Exp3c                                              ;
+; Device Family      ; Cyclone IV GX                                      ;
+; Device Name        ; EP4CGX150DF31C7                                    ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Enabled                                            ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; KEY[1]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY[1] } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++--------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary               ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 244.92 MHz ; 244.92 MHz      ; KEY[1]     ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++--------+--------+-------------------+
+; Clock  ; Slack  ; End Point TNS     ;
++--------+--------+-------------------+
+; KEY[1] ; -3.083 ; -24.661           ;
++--------+--------+-------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++--------+-------+-------------------+
+; Clock  ; Slack ; End Point TNS     ;
++--------+-------+-------------------+
+; KEY[1] ; 0.705 ; 0.000             ;
++--------+-------+-------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++--------+--------+---------------------------------+
+; Clock  ; Slack  ; End Point TNS                   ;
++--------+--------+---------------------------------+
+; KEY[1] ; -3.000 ; -15.000                         ;
++--------+--------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'KEY[1]'                                                                                            ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -3.083 ; counter:contador|tmp[0] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 4.055      ;
+; -3.083 ; counter:contador|tmp[0] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 4.055      ;
+; -3.083 ; counter:contador|tmp[0] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 4.055      ;
+; -3.083 ; counter:contador|tmp[0] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 4.055      ;
+; -3.083 ; counter:contador|tmp[0] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 4.055      ;
+; -3.083 ; counter:contador|tmp[0] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 4.055      ;
+; -3.083 ; counter:contador|tmp[0] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 4.055      ;
+; -3.080 ; counter:contador|tmp[0] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 4.055      ;
+; -2.952 ; counter:contador|tmp[2] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.924      ;
+; -2.952 ; counter:contador|tmp[2] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.924      ;
+; -2.952 ; counter:contador|tmp[2] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.924      ;
+; -2.952 ; counter:contador|tmp[2] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.924      ;
+; -2.952 ; counter:contador|tmp[2] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.924      ;
+; -2.952 ; counter:contador|tmp[2] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.924      ;
+; -2.952 ; counter:contador|tmp[2] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.924      ;
+; -2.949 ; counter:contador|tmp[2] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.924      ;
+; -2.836 ; counter:contador|tmp[1] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.808      ;
+; -2.836 ; counter:contador|tmp[1] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.808      ;
+; -2.836 ; counter:contador|tmp[1] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.808      ;
+; -2.836 ; counter:contador|tmp[1] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.808      ;
+; -2.836 ; counter:contador|tmp[1] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.808      ;
+; -2.836 ; counter:contador|tmp[1] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.808      ;
+; -2.836 ; counter:contador|tmp[1] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.808      ;
+; -2.833 ; counter:contador|tmp[1] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.808      ;
+; -2.817 ; counter:contador|tmp[4] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.789      ;
+; -2.817 ; counter:contador|tmp[4] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.789      ;
+; -2.817 ; counter:contador|tmp[4] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.789      ;
+; -2.817 ; counter:contador|tmp[4] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.789      ;
+; -2.817 ; counter:contador|tmp[4] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.789      ;
+; -2.817 ; counter:contador|tmp[4] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.789      ;
+; -2.817 ; counter:contador|tmp[4] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.789      ;
+; -2.814 ; counter:contador|tmp[4] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.789      ;
+; -2.692 ; counter:contador|tmp[3] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.664      ;
+; -2.692 ; counter:contador|tmp[3] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.664      ;
+; -2.692 ; counter:contador|tmp[3] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.664      ;
+; -2.692 ; counter:contador|tmp[3] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.664      ;
+; -2.692 ; counter:contador|tmp[3] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.664      ;
+; -2.692 ; counter:contador|tmp[3] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.664      ;
+; -2.692 ; counter:contador|tmp[3] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.664      ;
+; -2.689 ; counter:contador|tmp[3] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.664      ;
+; -2.673 ; counter:contador|tmp[6] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.645      ;
+; -2.673 ; counter:contador|tmp[6] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.645      ;
+; -2.673 ; counter:contador|tmp[6] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.645      ;
+; -2.673 ; counter:contador|tmp[6] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.645      ;
+; -2.673 ; counter:contador|tmp[6] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.645      ;
+; -2.673 ; counter:contador|tmp[6] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.645      ;
+; -2.673 ; counter:contador|tmp[6] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.645      ;
+; -2.670 ; counter:contador|tmp[6] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.645      ;
+; -2.559 ; counter:contador|tmp[5] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.531      ;
+; -2.559 ; counter:contador|tmp[5] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.531      ;
+; -2.559 ; counter:contador|tmp[5] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.531      ;
+; -2.559 ; counter:contador|tmp[5] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.531      ;
+; -2.559 ; counter:contador|tmp[5] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.531      ;
+; -2.559 ; counter:contador|tmp[5] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.531      ;
+; -2.559 ; counter:contador|tmp[5] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.531      ;
+; -2.556 ; counter:contador|tmp[5] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.531      ;
+; -2.052 ; counter:contador|tmp[7] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.024      ;
+; -2.052 ; counter:contador|tmp[7] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.024      ;
+; -2.052 ; counter:contador|tmp[7] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.024      ;
+; -2.052 ; counter:contador|tmp[7] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.024      ;
+; -2.052 ; counter:contador|tmp[7] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.024      ;
+; -2.052 ; counter:contador|tmp[7] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.024      ;
+; -2.052 ; counter:contador|tmp[7] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.046     ; 3.024      ;
+; -2.049 ; counter:contador|tmp[7] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.024      ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'KEY[1]'                                                                                            ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node               ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; 0.705 ; counter:contador|tmp[3] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.934      ;
+; 0.705 ; counter:contador|tmp[5] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.934      ;
+; 0.708 ; counter:contador|tmp[6] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.937      ;
+; 0.709 ; counter:contador|tmp[7] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.938      ;
+; 0.726 ; counter:contador|tmp[1] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.955      ;
+; 0.730 ; counter:contador|tmp[2] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.959      ;
+; 0.731 ; counter:contador|tmp[4] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.960      ;
+; 0.752 ; counter:contador|tmp[0] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 0.981      ;
+; 1.020 ; counter:contador|tmp[3] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.252      ;
+; 1.020 ; counter:contador|tmp[5] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.252      ;
+; 1.032 ; counter:contador|tmp[6] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.264      ;
+; 1.040 ; counter:contador|tmp[1] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.272      ;
+; 1.053 ; counter:contador|tmp[0] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.285      ;
+; 1.054 ; counter:contador|tmp[2] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.286      ;
+; 1.055 ; counter:contador|tmp[4] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.287      ;
+; 1.058 ; counter:contador|tmp[0] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.290      ;
+; 1.059 ; counter:contador|tmp[2] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.291      ;
+; 1.060 ; counter:contador|tmp[4] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.292      ;
+; 1.141 ; counter:contador|tmp[3] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.373      ;
+; 1.141 ; counter:contador|tmp[5] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.373      ;
+; 1.146 ; counter:contador|tmp[3] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.378      ;
+; 1.161 ; counter:contador|tmp[1] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.393      ;
+; 1.166 ; counter:contador|tmp[1] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.398      ;
+; 1.179 ; counter:contador|tmp[0] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.411      ;
+; 1.180 ; counter:contador|tmp[2] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.412      ;
+; 1.181 ; counter:contador|tmp[4] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.413      ;
+; 1.184 ; counter:contador|tmp[0] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.416      ;
+; 1.185 ; counter:contador|tmp[2] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.417      ;
+; 1.267 ; counter:contador|tmp[3] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.499      ;
+; 1.287 ; counter:contador|tmp[1] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.519      ;
+; 1.292 ; counter:contador|tmp[1] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.524      ;
+; 1.305 ; counter:contador|tmp[0] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.537      ;
+; 1.306 ; counter:contador|tmp[2] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.538      ;
+; 1.310 ; counter:contador|tmp[0] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.542      ;
+; 1.413 ; counter:contador|tmp[1] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.645      ;
+; 1.431 ; counter:contador|tmp[0] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 1.663      ;
+; 2.214 ; counter:contador|tmp[3] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.446      ;
+; 2.214 ; counter:contador|tmp[3] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.446      ;
+; 2.214 ; counter:contador|tmp[3] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.446      ;
+; 2.256 ; counter:contador|tmp[7] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.488      ;
+; 2.256 ; counter:contador|tmp[7] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.488      ;
+; 2.256 ; counter:contador|tmp[7] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.488      ;
+; 2.256 ; counter:contador|tmp[7] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.488      ;
+; 2.256 ; counter:contador|tmp[7] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.488      ;
+; 2.256 ; counter:contador|tmp[7] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.488      ;
+; 2.256 ; counter:contador|tmp[7] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.488      ;
+; 2.389 ; counter:contador|tmp[1] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.621      ;
+; 2.456 ; counter:contador|tmp[5] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.688      ;
+; 2.456 ; counter:contador|tmp[5] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.688      ;
+; 2.456 ; counter:contador|tmp[5] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.688      ;
+; 2.456 ; counter:contador|tmp[5] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.688      ;
+; 2.456 ; counter:contador|tmp[5] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.688      ;
+; 2.457 ; counter:contador|tmp[6] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.689      ;
+; 2.457 ; counter:contador|tmp[6] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.689      ;
+; 2.457 ; counter:contador|tmp[6] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.689      ;
+; 2.457 ; counter:contador|tmp[6] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.689      ;
+; 2.457 ; counter:contador|tmp[6] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.689      ;
+; 2.457 ; counter:contador|tmp[6] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.689      ;
+; 2.478 ; counter:contador|tmp[2] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.710      ;
+; 2.478 ; counter:contador|tmp[2] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.710      ;
+; 2.605 ; counter:contador|tmp[4] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.837      ;
+; 2.605 ; counter:contador|tmp[4] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.837      ;
+; 2.605 ; counter:contador|tmp[4] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.837      ;
+; 2.605 ; counter:contador|tmp[4] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.046      ; 2.837      ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'KEY[1]'                                                       ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                  ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; KEY[1] ; Rise       ; KEY[1]                  ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[0] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[1] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[2] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[3] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[4] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[5] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[6] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[7] ;
+; 0.232  ; 0.420        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[0] ;
+; 0.232  ; 0.420        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[1] ;
+; 0.232  ; 0.420        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[2] ;
+; 0.232  ; 0.420        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[3] ;
+; 0.232  ; 0.420        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[4] ;
+; 0.232  ; 0.420        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[5] ;
+; 0.232  ; 0.420        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[6] ;
+; 0.232  ; 0.420        ; 0.188          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[7] ;
+; 0.359  ; 0.579        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[0] ;
+; 0.359  ; 0.579        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[1] ;
+; 0.359  ; 0.579        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[2] ;
+; 0.359  ; 0.579        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[3] ;
+; 0.359  ; 0.579        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[4] ;
+; 0.359  ; 0.579        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[5] ;
+; 0.359  ; 0.579        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[6] ;
+; 0.359  ; 0.579        ; 0.220          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[7] ;
+; 0.384  ; 0.384        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[0]|clk     ;
+; 0.384  ; 0.384        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[1]|clk     ;
+; 0.384  ; 0.384        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[2]|clk     ;
+; 0.384  ; 0.384        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[3]|clk     ;
+; 0.384  ; 0.384        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[4]|clk     ;
+; 0.384  ; 0.384        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[5]|clk     ;
+; 0.384  ; 0.384        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[6]|clk     ;
+; 0.384  ; 0.384        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[7]|clk     ;
+; 0.394  ; 0.394        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|o          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|i          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|i          ;
+; 0.606  ; 0.606        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|o          ;
+; 0.614  ; 0.614        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[0]|clk     ;
+; 0.614  ; 0.614        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[1]|clk     ;
+; 0.614  ; 0.614        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[2]|clk     ;
+; 0.614  ; 0.614        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[3]|clk     ;
+; 0.614  ; 0.614        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[4]|clk     ;
+; 0.614  ; 0.614        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[5]|clk     ;
+; 0.614  ; 0.614        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[6]|clk     ;
+; 0.614  ; 0.614        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[7]|clk     ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; 8.213 ; 9.086 ; Rise       ; KEY[1]          ;
+;  SW[0]    ; KEY[1]     ; 5.431 ; 5.822 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; 5.290 ; 5.936 ; Rise       ; KEY[1]          ;
+;  SW[2]    ; KEY[1]     ; 5.928 ; 6.306 ; Rise       ; KEY[1]          ;
+;  SW[3]    ; KEY[1]     ; 8.213 ; 9.086 ; Rise       ; KEY[1]          ;
+;  SW[4]    ; KEY[1]     ; 5.811 ; 6.190 ; Rise       ; KEY[1]          ;
+;  SW[5]    ; KEY[1]     ; 5.345 ; 5.970 ; Rise       ; KEY[1]          ;
+;  SW[6]    ; KEY[1]     ; 5.100 ; 5.439 ; Rise       ; KEY[1]          ;
+;  SW[7]    ; KEY[1]     ; 4.432 ; 4.771 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; -2.028 ; -2.451 ; Rise       ; KEY[1]          ;
+;  SW[0]    ; KEY[1]     ; -2.139 ; -2.581 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; -2.028 ; -2.451 ; Rise       ; KEY[1]          ;
+;  SW[2]    ; KEY[1]     ; -2.901 ; -3.332 ; Rise       ; KEY[1]          ;
+;  SW[3]    ; KEY[1]     ; -5.265 ; -5.925 ; Rise       ; KEY[1]          ;
+;  SW[4]    ; KEY[1]     ; -2.656 ; -3.103 ; Rise       ; KEY[1]          ;
+;  SW[5]    ; KEY[1]     ; -2.542 ; -2.981 ; Rise       ; KEY[1]          ;
+;  SW[6]    ; KEY[1]     ; -2.645 ; -3.092 ; Rise       ; KEY[1]          ;
+;  SW[7]    ; KEY[1]     ; -2.571 ; -2.974 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; KEY[1]     ; 8.284 ; 8.228 ; Rise       ; KEY[1]          ;
+;  LEDR[0]  ; KEY[1]     ; 7.646 ; 7.602 ; Rise       ; KEY[1]          ;
+;  LEDR[1]  ; KEY[1]     ; 7.615 ; 7.574 ; Rise       ; KEY[1]          ;
+;  LEDR[2]  ; KEY[1]     ; 7.589 ; 7.543 ; Rise       ; KEY[1]          ;
+;  LEDR[3]  ; KEY[1]     ; 7.650 ; 7.620 ; Rise       ; KEY[1]          ;
+;  LEDR[4]  ; KEY[1]     ; 7.959 ; 7.913 ; Rise       ; KEY[1]          ;
+;  LEDR[5]  ; KEY[1]     ; 7.644 ; 7.614 ; Rise       ; KEY[1]          ;
+;  LEDR[6]  ; KEY[1]     ; 8.284 ; 8.228 ; Rise       ; KEY[1]          ;
+;  LEDR[7]  ; KEY[1]     ; 7.666 ; 7.621 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; KEY[1]     ; 7.331 ; 7.286 ; Rise       ; KEY[1]          ;
+;  LEDR[0]  ; KEY[1]     ; 7.386 ; 7.343 ; Rise       ; KEY[1]          ;
+;  LEDR[1]  ; KEY[1]     ; 7.356 ; 7.316 ; Rise       ; KEY[1]          ;
+;  LEDR[2]  ; KEY[1]     ; 7.331 ; 7.286 ; Rise       ; KEY[1]          ;
+;  LEDR[3]  ; KEY[1]     ; 7.390 ; 7.360 ; Rise       ; KEY[1]          ;
+;  LEDR[4]  ; KEY[1]     ; 7.687 ; 7.642 ; Rise       ; KEY[1]          ;
+;  LEDR[5]  ; KEY[1]     ; 7.384 ; 7.354 ; Rise       ; KEY[1]          ;
+;  LEDR[6]  ; KEY[1]     ; 7.998 ; 7.943 ; Rise       ; KEY[1]          ;
+;  LEDR[7]  ; KEY[1]     ; 7.405 ; 7.361 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 270.34 MHz ; 250.0 MHz       ; KEY[1]     ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++--------+--------+------------------+
+; Clock  ; Slack  ; End Point TNS    ;
++--------+--------+------------------+
+; KEY[1] ; -2.699 ; -21.588          ;
++--------+--------+------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++--------+-------+------------------+
+; Clock  ; Slack ; End Point TNS    ;
++--------+-------+------------------+
+; KEY[1] ; 0.642 ; 0.000            ;
++--------+-------+------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; KEY[1] ; -3.000 ; -15.000                        ;
++--------+--------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'KEY[1]'                                                                                             ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -2.699 ; counter:contador|tmp[0] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.675      ;
+; -2.699 ; counter:contador|tmp[0] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.675      ;
+; -2.699 ; counter:contador|tmp[0] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.675      ;
+; -2.699 ; counter:contador|tmp[0] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.675      ;
+; -2.699 ; counter:contador|tmp[0] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.675      ;
+; -2.699 ; counter:contador|tmp[0] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.675      ;
+; -2.699 ; counter:contador|tmp[0] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.675      ;
+; -2.695 ; counter:contador|tmp[0] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 3.675      ;
+; -2.584 ; counter:contador|tmp[2] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.560      ;
+; -2.584 ; counter:contador|tmp[2] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.560      ;
+; -2.584 ; counter:contador|tmp[2] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.560      ;
+; -2.584 ; counter:contador|tmp[2] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.560      ;
+; -2.584 ; counter:contador|tmp[2] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.560      ;
+; -2.584 ; counter:contador|tmp[2] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.560      ;
+; -2.584 ; counter:contador|tmp[2] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.560      ;
+; -2.580 ; counter:contador|tmp[2] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 3.560      ;
+; -2.484 ; counter:contador|tmp[1] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.460      ;
+; -2.484 ; counter:contador|tmp[1] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.460      ;
+; -2.484 ; counter:contador|tmp[1] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.460      ;
+; -2.484 ; counter:contador|tmp[1] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.460      ;
+; -2.484 ; counter:contador|tmp[1] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.460      ;
+; -2.484 ; counter:contador|tmp[1] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.460      ;
+; -2.484 ; counter:contador|tmp[1] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.460      ;
+; -2.480 ; counter:contador|tmp[1] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 3.460      ;
+; -2.466 ; counter:contador|tmp[4] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.442      ;
+; -2.466 ; counter:contador|tmp[4] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.442      ;
+; -2.466 ; counter:contador|tmp[4] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.442      ;
+; -2.466 ; counter:contador|tmp[4] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.442      ;
+; -2.466 ; counter:contador|tmp[4] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.442      ;
+; -2.466 ; counter:contador|tmp[4] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.442      ;
+; -2.466 ; counter:contador|tmp[4] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.442      ;
+; -2.462 ; counter:contador|tmp[4] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 3.442      ;
+; -2.356 ; counter:contador|tmp[3] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.332      ;
+; -2.356 ; counter:contador|tmp[3] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.332      ;
+; -2.356 ; counter:contador|tmp[3] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.332      ;
+; -2.356 ; counter:contador|tmp[3] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.332      ;
+; -2.356 ; counter:contador|tmp[3] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.332      ;
+; -2.356 ; counter:contador|tmp[3] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.332      ;
+; -2.356 ; counter:contador|tmp[3] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.332      ;
+; -2.352 ; counter:contador|tmp[3] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 3.332      ;
+; -2.338 ; counter:contador|tmp[6] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.314      ;
+; -2.338 ; counter:contador|tmp[6] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.314      ;
+; -2.338 ; counter:contador|tmp[6] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.314      ;
+; -2.338 ; counter:contador|tmp[6] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.314      ;
+; -2.338 ; counter:contador|tmp[6] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.314      ;
+; -2.338 ; counter:contador|tmp[6] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.314      ;
+; -2.338 ; counter:contador|tmp[6] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.314      ;
+; -2.334 ; counter:contador|tmp[6] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 3.314      ;
+; -2.240 ; counter:contador|tmp[5] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.216      ;
+; -2.240 ; counter:contador|tmp[5] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.216      ;
+; -2.240 ; counter:contador|tmp[5] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.216      ;
+; -2.240 ; counter:contador|tmp[5] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.216      ;
+; -2.240 ; counter:contador|tmp[5] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.216      ;
+; -2.240 ; counter:contador|tmp[5] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.216      ;
+; -2.240 ; counter:contador|tmp[5] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 3.216      ;
+; -2.236 ; counter:contador|tmp[5] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 3.216      ;
+; -1.788 ; counter:contador|tmp[7] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 2.764      ;
+; -1.788 ; counter:contador|tmp[7] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 2.764      ;
+; -1.788 ; counter:contador|tmp[7] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 2.764      ;
+; -1.788 ; counter:contador|tmp[7] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 2.764      ;
+; -1.788 ; counter:contador|tmp[7] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 2.764      ;
+; -1.788 ; counter:contador|tmp[7] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 2.764      ;
+; -1.788 ; counter:contador|tmp[7] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.043     ; 2.764      ;
+; -1.784 ; counter:contador|tmp[7] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.039     ; 2.764      ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'KEY[1]'                                                                                             ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node               ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; 0.642 ; counter:contador|tmp[3] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.852      ;
+; 0.643 ; counter:contador|tmp[5] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.853      ;
+; 0.644 ; counter:contador|tmp[6] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.854      ;
+; 0.649 ; counter:contador|tmp[7] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.859      ;
+; 0.663 ; counter:contador|tmp[1] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.873      ;
+; 0.667 ; counter:contador|tmp[2] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.877      ;
+; 0.667 ; counter:contador|tmp[4] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.877      ;
+; 0.686 ; counter:contador|tmp[0] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.039      ; 0.896      ;
+; 0.924 ; counter:contador|tmp[3] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.138      ;
+; 0.925 ; counter:contador|tmp[5] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.139      ;
+; 0.928 ; counter:contador|tmp[6] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.142      ;
+; 0.946 ; counter:contador|tmp[1] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.160      ;
+; 0.949 ; counter:contador|tmp[0] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.163      ;
+; 0.951 ; counter:contador|tmp[2] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.165      ;
+; 0.951 ; counter:contador|tmp[4] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.165      ;
+; 0.960 ; counter:contador|tmp[0] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.174      ;
+; 0.962 ; counter:contador|tmp[2] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.176      ;
+; 0.962 ; counter:contador|tmp[4] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.176      ;
+; 1.023 ; counter:contador|tmp[3] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.237      ;
+; 1.024 ; counter:contador|tmp[5] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.238      ;
+; 1.034 ; counter:contador|tmp[3] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.248      ;
+; 1.045 ; counter:contador|tmp[1] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.259      ;
+; 1.056 ; counter:contador|tmp[1] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.270      ;
+; 1.059 ; counter:contador|tmp[0] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.273      ;
+; 1.061 ; counter:contador|tmp[2] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.275      ;
+; 1.061 ; counter:contador|tmp[4] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.275      ;
+; 1.070 ; counter:contador|tmp[0] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.284      ;
+; 1.072 ; counter:contador|tmp[2] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.286      ;
+; 1.133 ; counter:contador|tmp[3] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.347      ;
+; 1.155 ; counter:contador|tmp[1] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.369      ;
+; 1.166 ; counter:contador|tmp[1] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.380      ;
+; 1.169 ; counter:contador|tmp[0] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.383      ;
+; 1.171 ; counter:contador|tmp[2] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.385      ;
+; 1.180 ; counter:contador|tmp[0] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.394      ;
+; 1.265 ; counter:contador|tmp[1] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.479      ;
+; 1.279 ; counter:contador|tmp[0] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 1.493      ;
+; 2.007 ; counter:contador|tmp[3] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.221      ;
+; 2.007 ; counter:contador|tmp[3] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.221      ;
+; 2.007 ; counter:contador|tmp[3] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.221      ;
+; 2.081 ; counter:contador|tmp[7] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.295      ;
+; 2.081 ; counter:contador|tmp[7] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.295      ;
+; 2.081 ; counter:contador|tmp[7] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.295      ;
+; 2.081 ; counter:contador|tmp[7] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.295      ;
+; 2.081 ; counter:contador|tmp[7] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.295      ;
+; 2.081 ; counter:contador|tmp[7] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.295      ;
+; 2.081 ; counter:contador|tmp[7] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.295      ;
+; 2.168 ; counter:contador|tmp[1] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.382      ;
+; 2.234 ; counter:contador|tmp[6] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.448      ;
+; 2.234 ; counter:contador|tmp[6] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.448      ;
+; 2.234 ; counter:contador|tmp[6] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.448      ;
+; 2.234 ; counter:contador|tmp[6] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.448      ;
+; 2.234 ; counter:contador|tmp[6] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.448      ;
+; 2.234 ; counter:contador|tmp[6] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.448      ;
+; 2.241 ; counter:contador|tmp[5] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.455      ;
+; 2.241 ; counter:contador|tmp[5] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.455      ;
+; 2.241 ; counter:contador|tmp[5] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.455      ;
+; 2.241 ; counter:contador|tmp[5] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.455      ;
+; 2.241 ; counter:contador|tmp[5] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.455      ;
+; 2.269 ; counter:contador|tmp[2] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.483      ;
+; 2.269 ; counter:contador|tmp[2] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.483      ;
+; 2.378 ; counter:contador|tmp[4] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.592      ;
+; 2.378 ; counter:contador|tmp[4] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.592      ;
+; 2.378 ; counter:contador|tmp[4] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.592      ;
+; 2.378 ; counter:contador|tmp[4] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.043      ; 2.592      ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'KEY[1]'                                                        ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                  ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; KEY[1] ; Rise       ; KEY[1]                  ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[0] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[1] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[2] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[3] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[4] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[5] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[6] ;
+; -1.500 ; 1.000        ; 2.500          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[7] ;
+; 0.248  ; 0.466        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[0] ;
+; 0.248  ; 0.466        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[1] ;
+; 0.248  ; 0.466        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[2] ;
+; 0.248  ; 0.466        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[3] ;
+; 0.248  ; 0.466        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[4] ;
+; 0.248  ; 0.466        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[5] ;
+; 0.248  ; 0.466        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[6] ;
+; 0.248  ; 0.466        ; 0.218          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[7] ;
+; 0.339  ; 0.525        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[0] ;
+; 0.339  ; 0.525        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[1] ;
+; 0.339  ; 0.525        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[2] ;
+; 0.339  ; 0.525        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[3] ;
+; 0.339  ; 0.525        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[4] ;
+; 0.339  ; 0.525        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[5] ;
+; 0.339  ; 0.525        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[6] ;
+; 0.339  ; 0.525        ; 0.186          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[7] ;
+; 0.416  ; 0.416        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|o          ;
+; 0.487  ; 0.487        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[0]|clk     ;
+; 0.487  ; 0.487        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[1]|clk     ;
+; 0.487  ; 0.487        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[2]|clk     ;
+; 0.487  ; 0.487        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[3]|clk     ;
+; 0.487  ; 0.487        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[4]|clk     ;
+; 0.487  ; 0.487        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[5]|clk     ;
+; 0.487  ; 0.487        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[6]|clk     ;
+; 0.487  ; 0.487        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[7]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|i          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|i          ;
+; 0.506  ; 0.506        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[0]|clk     ;
+; 0.506  ; 0.506        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[1]|clk     ;
+; 0.506  ; 0.506        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[2]|clk     ;
+; 0.506  ; 0.506        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[3]|clk     ;
+; 0.506  ; 0.506        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[4]|clk     ;
+; 0.506  ; 0.506        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[5]|clk     ;
+; 0.506  ; 0.506        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[6]|clk     ;
+; 0.506  ; 0.506        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[7]|clk     ;
+; 0.584  ; 0.584        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|o          ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; 7.417 ; 8.006 ; Rise       ; KEY[1]          ;
+;  SW[0]    ; KEY[1]     ; 4.784 ; 5.069 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; 4.670 ; 5.173 ; Rise       ; KEY[1]          ;
+;  SW[2]    ; KEY[1]     ; 5.254 ; 5.509 ; Rise       ; KEY[1]          ;
+;  SW[3]    ; KEY[1]     ; 7.417 ; 8.006 ; Rise       ; KEY[1]          ;
+;  SW[4]    ; KEY[1]     ; 5.163 ; 5.401 ; Rise       ; KEY[1]          ;
+;  SW[5]    ; KEY[1]     ; 4.724 ; 5.207 ; Rise       ; KEY[1]          ;
+;  SW[6]    ; KEY[1]     ; 4.503 ; 4.742 ; Rise       ; KEY[1]          ;
+;  SW[7]    ; KEY[1]     ; 3.899 ; 4.128 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; -1.725 ; -1.982 ; Rise       ; KEY[1]          ;
+;  SW[0]    ; KEY[1]     ; -1.822 ; -2.099 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; -1.725 ; -1.982 ; Rise       ; KEY[1]          ;
+;  SW[2]    ; KEY[1]     ; -2.529 ; -2.773 ; Rise       ; KEY[1]          ;
+;  SW[3]    ; KEY[1]     ; -4.753 ; -5.105 ; Rise       ; KEY[1]          ;
+;  SW[4]    ; KEY[1]     ; -2.314 ; -2.566 ; Rise       ; KEY[1]          ;
+;  SW[5]    ; KEY[1]     ; -2.196 ; -2.462 ; Rise       ; KEY[1]          ;
+;  SW[6]    ; KEY[1]     ; -2.294 ; -2.566 ; Rise       ; KEY[1]          ;
+;  SW[7]    ; KEY[1]     ; -2.227 ; -2.460 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; KEY[1]     ; 7.611 ; 7.488 ; Rise       ; KEY[1]          ;
+;  LEDR[0]  ; KEY[1]     ; 7.015 ; 6.925 ; Rise       ; KEY[1]          ;
+;  LEDR[1]  ; KEY[1]     ; 6.988 ; 6.901 ; Rise       ; KEY[1]          ;
+;  LEDR[2]  ; KEY[1]     ; 6.962 ; 6.871 ; Rise       ; KEY[1]          ;
+;  LEDR[3]  ; KEY[1]     ; 7.019 ; 6.941 ; Rise       ; KEY[1]          ;
+;  LEDR[4]  ; KEY[1]     ; 7.307 ; 7.207 ; Rise       ; KEY[1]          ;
+;  LEDR[5]  ; KEY[1]     ; 7.011 ; 6.934 ; Rise       ; KEY[1]          ;
+;  LEDR[6]  ; KEY[1]     ; 7.611 ; 7.488 ; Rise       ; KEY[1]          ;
+;  LEDR[7]  ; KEY[1]     ; 7.033 ; 6.942 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; KEY[1]     ; 6.715 ; 6.627 ; Rise       ; KEY[1]          ;
+;  LEDR[0]  ; KEY[1]     ; 6.766 ; 6.679 ; Rise       ; KEY[1]          ;
+;  LEDR[1]  ; KEY[1]     ; 6.740 ; 6.655 ; Rise       ; KEY[1]          ;
+;  LEDR[2]  ; KEY[1]     ; 6.715 ; 6.627 ; Rise       ; KEY[1]          ;
+;  LEDR[3]  ; KEY[1]     ; 6.770 ; 6.694 ; Rise       ; KEY[1]          ;
+;  LEDR[4]  ; KEY[1]     ; 7.047 ; 6.950 ; Rise       ; KEY[1]          ;
+;  LEDR[5]  ; KEY[1]     ; 6.762 ; 6.687 ; Rise       ; KEY[1]          ;
+;  LEDR[6]  ; KEY[1]     ; 7.338 ; 7.219 ; Rise       ; KEY[1]          ;
+;  LEDR[7]  ; KEY[1]     ; 6.783 ; 6.695 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++--------+--------+------------------+
+; Clock  ; Slack  ; End Point TNS    ;
++--------+--------+------------------+
+; KEY[1] ; -0.936 ; -7.487           ;
++--------+--------+------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++--------+-------+------------------+
+; Clock  ; Slack ; End Point TNS    ;
++--------+-------+------------------+
+; KEY[1] ; 0.327 ; 0.000            ;
++--------+-------+------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; KEY[1] ; -3.000 ; -12.352                        ;
++--------+--------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'KEY[1]'                                                                                             ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -0.936 ; counter:contador|tmp[0] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.920      ;
+; -0.936 ; counter:contador|tmp[0] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.920      ;
+; -0.936 ; counter:contador|tmp[0] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.920      ;
+; -0.936 ; counter:contador|tmp[0] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.920      ;
+; -0.936 ; counter:contador|tmp[0] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.920      ;
+; -0.936 ; counter:contador|tmp[0] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.920      ;
+; -0.936 ; counter:contador|tmp[0] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.920      ;
+; -0.935 ; counter:contador|tmp[0] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 1.920      ;
+; -0.867 ; counter:contador|tmp[2] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.851      ;
+; -0.867 ; counter:contador|tmp[2] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.851      ;
+; -0.867 ; counter:contador|tmp[2] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.851      ;
+; -0.867 ; counter:contador|tmp[2] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.851      ;
+; -0.867 ; counter:contador|tmp[2] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.851      ;
+; -0.867 ; counter:contador|tmp[2] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.851      ;
+; -0.867 ; counter:contador|tmp[2] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.851      ;
+; -0.866 ; counter:contador|tmp[2] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 1.851      ;
+; -0.864 ; counter:contador|tmp[1] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.848      ;
+; -0.864 ; counter:contador|tmp[1] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.848      ;
+; -0.864 ; counter:contador|tmp[1] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.848      ;
+; -0.864 ; counter:contador|tmp[1] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.848      ;
+; -0.864 ; counter:contador|tmp[1] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.848      ;
+; -0.864 ; counter:contador|tmp[1] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.848      ;
+; -0.864 ; counter:contador|tmp[1] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.848      ;
+; -0.863 ; counter:contador|tmp[1] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 1.848      ;
+; -0.800 ; counter:contador|tmp[4] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.784      ;
+; -0.800 ; counter:contador|tmp[4] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.784      ;
+; -0.800 ; counter:contador|tmp[4] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.784      ;
+; -0.800 ; counter:contador|tmp[4] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.784      ;
+; -0.800 ; counter:contador|tmp[4] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.784      ;
+; -0.800 ; counter:contador|tmp[4] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.784      ;
+; -0.800 ; counter:contador|tmp[4] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.784      ;
+; -0.799 ; counter:contador|tmp[4] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 1.784      ;
+; -0.791 ; counter:contador|tmp[3] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.775      ;
+; -0.791 ; counter:contador|tmp[3] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.775      ;
+; -0.791 ; counter:contador|tmp[3] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.775      ;
+; -0.791 ; counter:contador|tmp[3] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.775      ;
+; -0.791 ; counter:contador|tmp[3] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.775      ;
+; -0.791 ; counter:contador|tmp[3] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.775      ;
+; -0.791 ; counter:contador|tmp[3] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.775      ;
+; -0.790 ; counter:contador|tmp[3] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 1.775      ;
+; -0.729 ; counter:contador|tmp[5] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.713      ;
+; -0.729 ; counter:contador|tmp[5] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.713      ;
+; -0.729 ; counter:contador|tmp[5] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.713      ;
+; -0.729 ; counter:contador|tmp[5] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.713      ;
+; -0.729 ; counter:contador|tmp[5] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.713      ;
+; -0.729 ; counter:contador|tmp[5] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.713      ;
+; -0.729 ; counter:contador|tmp[5] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.713      ;
+; -0.728 ; counter:contador|tmp[5] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 1.713      ;
+; -0.726 ; counter:contador|tmp[6] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.710      ;
+; -0.726 ; counter:contador|tmp[6] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.710      ;
+; -0.726 ; counter:contador|tmp[6] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.710      ;
+; -0.726 ; counter:contador|tmp[6] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.710      ;
+; -0.726 ; counter:contador|tmp[6] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.710      ;
+; -0.726 ; counter:contador|tmp[6] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.710      ;
+; -0.726 ; counter:contador|tmp[6] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.710      ;
+; -0.725 ; counter:contador|tmp[6] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 1.710      ;
+; -0.472 ; counter:contador|tmp[7] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.456      ;
+; -0.472 ; counter:contador|tmp[7] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.456      ;
+; -0.472 ; counter:contador|tmp[7] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.456      ;
+; -0.472 ; counter:contador|tmp[7] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.456      ;
+; -0.472 ; counter:contador|tmp[7] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.456      ;
+; -0.472 ; counter:contador|tmp[7] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.456      ;
+; -0.472 ; counter:contador|tmp[7] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.023     ; 1.456      ;
+; -0.471 ; counter:contador|tmp[7] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 1.000        ; -0.022     ; 1.456      ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'KEY[1]'                                                                                             ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node               ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; 0.327 ; counter:contador|tmp[3] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.433      ;
+; 0.327 ; counter:contador|tmp[5] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.433      ;
+; 0.328 ; counter:contador|tmp[6] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.434      ;
+; 0.328 ; counter:contador|tmp[7] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.434      ;
+; 0.338 ; counter:contador|tmp[1] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.444      ;
+; 0.340 ; counter:contador|tmp[2] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.446      ;
+; 0.340 ; counter:contador|tmp[4] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.446      ;
+; 0.349 ; counter:contador|tmp[0] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.022      ; 0.455      ;
+; 0.475 ; counter:contador|tmp[3] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.582      ;
+; 0.475 ; counter:contador|tmp[5] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.582      ;
+; 0.485 ; counter:contador|tmp[6] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.592      ;
+; 0.486 ; counter:contador|tmp[1] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.593      ;
+; 0.495 ; counter:contador|tmp[0] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.602      ;
+; 0.497 ; counter:contador|tmp[2] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.604      ;
+; 0.497 ; counter:contador|tmp[4] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.604      ;
+; 0.498 ; counter:contador|tmp[0] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.605      ;
+; 0.500 ; counter:contador|tmp[2] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.607      ;
+; 0.500 ; counter:contador|tmp[4] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.607      ;
+; 0.538 ; counter:contador|tmp[3] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.645      ;
+; 0.538 ; counter:contador|tmp[5] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.645      ;
+; 0.541 ; counter:contador|tmp[3] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.648      ;
+; 0.549 ; counter:contador|tmp[1] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.656      ;
+; 0.552 ; counter:contador|tmp[1] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.659      ;
+; 0.561 ; counter:contador|tmp[0] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.668      ;
+; 0.563 ; counter:contador|tmp[2] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.670      ;
+; 0.563 ; counter:contador|tmp[4] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.670      ;
+; 0.564 ; counter:contador|tmp[0] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.671      ;
+; 0.566 ; counter:contador|tmp[2] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.673      ;
+; 0.604 ; counter:contador|tmp[3] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.711      ;
+; 0.615 ; counter:contador|tmp[1] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.722      ;
+; 0.618 ; counter:contador|tmp[1] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.725      ;
+; 0.627 ; counter:contador|tmp[0] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.734      ;
+; 0.629 ; counter:contador|tmp[2] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.736      ;
+; 0.630 ; counter:contador|tmp[0] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.737      ;
+; 0.681 ; counter:contador|tmp[1] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.788      ;
+; 0.693 ; counter:contador|tmp[0] ; counter:contador|tmp[7] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 0.800      ;
+; 1.026 ; counter:contador|tmp[3] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.133      ;
+; 1.026 ; counter:contador|tmp[3] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.133      ;
+; 1.026 ; counter:contador|tmp[3] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.133      ;
+; 1.036 ; counter:contador|tmp[7] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.143      ;
+; 1.036 ; counter:contador|tmp[7] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.143      ;
+; 1.036 ; counter:contador|tmp[7] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.143      ;
+; 1.036 ; counter:contador|tmp[7] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.143      ;
+; 1.036 ; counter:contador|tmp[7] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.143      ;
+; 1.036 ; counter:contador|tmp[7] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.143      ;
+; 1.036 ; counter:contador|tmp[7] ; counter:contador|tmp[6] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.143      ;
+; 1.098 ; counter:contador|tmp[1] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.205      ;
+; 1.130 ; counter:contador|tmp[5] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.237      ;
+; 1.130 ; counter:contador|tmp[5] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.237      ;
+; 1.130 ; counter:contador|tmp[5] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.237      ;
+; 1.130 ; counter:contador|tmp[5] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.237      ;
+; 1.130 ; counter:contador|tmp[5] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.237      ;
+; 1.132 ; counter:contador|tmp[6] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.239      ;
+; 1.132 ; counter:contador|tmp[6] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.239      ;
+; 1.132 ; counter:contador|tmp[6] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.239      ;
+; 1.132 ; counter:contador|tmp[6] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.239      ;
+; 1.132 ; counter:contador|tmp[6] ; counter:contador|tmp[4] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.239      ;
+; 1.132 ; counter:contador|tmp[6] ; counter:contador|tmp[5] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.239      ;
+; 1.143 ; counter:contador|tmp[2] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.250      ;
+; 1.143 ; counter:contador|tmp[2] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.250      ;
+; 1.203 ; counter:contador|tmp[4] ; counter:contador|tmp[0] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.310      ;
+; 1.203 ; counter:contador|tmp[4] ; counter:contador|tmp[1] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.310      ;
+; 1.203 ; counter:contador|tmp[4] ; counter:contador|tmp[2] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.310      ;
+; 1.203 ; counter:contador|tmp[4] ; counter:contador|tmp[3] ; KEY[1]       ; KEY[1]      ; 0.000        ; 0.023      ; 1.310      ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'KEY[1]'                                                        ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                  ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; KEY[1] ; Rise       ; KEY[1]                  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[0] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[1] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[2] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[3] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[4] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[5] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[6] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; KEY[1] ; Rise       ; counter:contador|tmp[7] ;
+; -0.169 ; 0.015        ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[0] ;
+; -0.169 ; 0.015        ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[1] ;
+; -0.169 ; 0.015        ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[2] ;
+; -0.169 ; 0.015        ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[3] ;
+; -0.169 ; 0.015        ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[4] ;
+; -0.169 ; 0.015        ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[5] ;
+; -0.169 ; 0.015        ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[6] ;
+; -0.169 ; 0.015        ; 0.184          ; Low Pulse Width  ; KEY[1] ; Rise       ; counter:contador|tmp[7] ;
+; 0.011  ; 0.011        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[0]|clk     ;
+; 0.011  ; 0.011        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[1]|clk     ;
+; 0.011  ; 0.011        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[2]|clk     ;
+; 0.011  ; 0.011        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[3]|clk     ;
+; 0.011  ; 0.011        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[4]|clk     ;
+; 0.011  ; 0.011        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[5]|clk     ;
+; 0.011  ; 0.011        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[6]|clk     ;
+; 0.011  ; 0.011        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; contador|tmp[7]|clk     ;
+; 0.120  ; 0.120        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|o          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|i          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[1] ; Rise       ; KEY[1]~input|i          ;
+; 0.764  ; 0.980        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[0] ;
+; 0.764  ; 0.980        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[1] ;
+; 0.764  ; 0.980        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[2] ;
+; 0.764  ; 0.980        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[3] ;
+; 0.764  ; 0.980        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[4] ;
+; 0.764  ; 0.980        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[5] ;
+; 0.764  ; 0.980        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[6] ;
+; 0.764  ; 0.980        ; 0.216          ; High Pulse Width ; KEY[1] ; Rise       ; counter:contador|tmp[7] ;
+; 0.880  ; 0.880        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; KEY[1]~input|o          ;
+; 0.986  ; 0.986        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[0]|clk     ;
+; 0.986  ; 0.986        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[1]|clk     ;
+; 0.986  ; 0.986        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[2]|clk     ;
+; 0.986  ; 0.986        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[3]|clk     ;
+; 0.986  ; 0.986        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[4]|clk     ;
+; 0.986  ; 0.986        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[5]|clk     ;
+; 0.986  ; 0.986        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[6]|clk     ;
+; 0.986  ; 0.986        ; 0.000          ; High Pulse Width ; KEY[1] ; Rise       ; contador|tmp[7]|clk     ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; 4.256 ; 5.186 ; Rise       ; KEY[1]          ;
+;  SW[0]    ; KEY[1]     ; 2.723 ; 3.247 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; 2.659 ; 3.320 ; Rise       ; KEY[1]          ;
+;  SW[2]    ; KEY[1]     ; 2.971 ; 3.542 ; Rise       ; KEY[1]          ;
+;  SW[3]    ; KEY[1]     ; 4.256 ; 5.186 ; Rise       ; KEY[1]          ;
+;  SW[4]    ; KEY[1]     ; 2.908 ; 3.473 ; Rise       ; KEY[1]          ;
+;  SW[5]    ; KEY[1]     ; 2.655 ; 3.357 ; Rise       ; KEY[1]          ;
+;  SW[6]    ; KEY[1]     ; 2.560 ; 3.139 ; Rise       ; KEY[1]          ;
+;  SW[7]    ; KEY[1]     ; 2.258 ; 2.867 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; -1.008 ; -1.661 ; Rise       ; KEY[1]          ;
+;  SW[0]    ; KEY[1]     ; -1.052 ; -1.708 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; -1.008 ; -1.661 ; Rise       ; KEY[1]          ;
+;  SW[2]    ; KEY[1]     ; -1.436 ; -2.135 ; Rise       ; KEY[1]          ;
+;  SW[3]    ; KEY[1]     ; -2.756 ; -3.679 ; Rise       ; KEY[1]          ;
+;  SW[4]    ; KEY[1]     ; -1.312 ; -2.012 ; Rise       ; KEY[1]          ;
+;  SW[5]    ; KEY[1]     ; -1.264 ; -1.945 ; Rise       ; KEY[1]          ;
+;  SW[6]    ; KEY[1]     ; -1.316 ; -2.012 ; Rise       ; KEY[1]          ;
+;  SW[7]    ; KEY[1]     ; -1.281 ; -1.976 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; KEY[1]     ; 4.230 ; 4.356 ; Rise       ; KEY[1]          ;
+;  LEDR[0]  ; KEY[1]     ; 3.904 ; 3.988 ; Rise       ; KEY[1]          ;
+;  LEDR[1]  ; KEY[1]     ; 3.887 ; 3.968 ; Rise       ; KEY[1]          ;
+;  LEDR[2]  ; KEY[1]     ; 3.877 ; 3.949 ; Rise       ; KEY[1]          ;
+;  LEDR[3]  ; KEY[1]     ; 3.914 ; 4.002 ; Rise       ; KEY[1]          ;
+;  LEDR[4]  ; KEY[1]     ; 4.075 ; 4.176 ; Rise       ; KEY[1]          ;
+;  LEDR[5]  ; KEY[1]     ; 3.907 ; 3.993 ; Rise       ; KEY[1]          ;
+;  LEDR[6]  ; KEY[1]     ; 4.230 ; 4.356 ; Rise       ; KEY[1]          ;
+;  LEDR[7]  ; KEY[1]     ; 3.921 ; 4.004 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; KEY[1]     ; 3.744 ; 3.815 ; Rise       ; KEY[1]          ;
+;  LEDR[0]  ; KEY[1]     ; 3.770 ; 3.852 ; Rise       ; KEY[1]          ;
+;  LEDR[1]  ; KEY[1]     ; 3.754 ; 3.832 ; Rise       ; KEY[1]          ;
+;  LEDR[2]  ; KEY[1]     ; 3.744 ; 3.815 ; Rise       ; KEY[1]          ;
+;  LEDR[3]  ; KEY[1]     ; 3.780 ; 3.865 ; Rise       ; KEY[1]          ;
+;  LEDR[4]  ; KEY[1]     ; 3.935 ; 4.033 ; Rise       ; KEY[1]          ;
+;  LEDR[5]  ; KEY[1]     ; 3.772 ; 3.856 ; Rise       ; KEY[1]          ;
+;  LEDR[6]  ; KEY[1]     ; 4.082 ; 4.205 ; Rise       ; KEY[1]          ;
+;  LEDR[7]  ; KEY[1]     ; 3.786 ; 3.867 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.083  ; 0.327 ; N/A      ; N/A     ; -3.000              ;
+;  KEY[1]          ; -3.083  ; 0.327 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -24.661 ; 0.0   ; 0.0      ; 0.0     ; -15.0               ;
+;  KEY[1]          ; -24.661 ; 0.000 ; N/A      ; N/A     ; -15.000             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; 8.213 ; 9.086 ; Rise       ; KEY[1]          ;
+;  SW[0]    ; KEY[1]     ; 5.431 ; 5.822 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; 5.290 ; 5.936 ; Rise       ; KEY[1]          ;
+;  SW[2]    ; KEY[1]     ; 5.928 ; 6.306 ; Rise       ; KEY[1]          ;
+;  SW[3]    ; KEY[1]     ; 8.213 ; 9.086 ; Rise       ; KEY[1]          ;
+;  SW[4]    ; KEY[1]     ; 5.811 ; 6.190 ; Rise       ; KEY[1]          ;
+;  SW[5]    ; KEY[1]     ; 5.345 ; 5.970 ; Rise       ; KEY[1]          ;
+;  SW[6]    ; KEY[1]     ; 5.100 ; 5.439 ; Rise       ; KEY[1]          ;
+;  SW[7]    ; KEY[1]     ; 4.432 ; 4.771 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; KEY[1]     ; -1.008 ; -1.661 ; Rise       ; KEY[1]          ;
+;  SW[0]    ; KEY[1]     ; -1.052 ; -1.708 ; Rise       ; KEY[1]          ;
+;  SW[1]    ; KEY[1]     ; -1.008 ; -1.661 ; Rise       ; KEY[1]          ;
+;  SW[2]    ; KEY[1]     ; -1.436 ; -2.135 ; Rise       ; KEY[1]          ;
+;  SW[3]    ; KEY[1]     ; -2.756 ; -3.679 ; Rise       ; KEY[1]          ;
+;  SW[4]    ; KEY[1]     ; -1.312 ; -2.012 ; Rise       ; KEY[1]          ;
+;  SW[5]    ; KEY[1]     ; -1.264 ; -1.945 ; Rise       ; KEY[1]          ;
+;  SW[6]    ; KEY[1]     ; -1.316 ; -2.012 ; Rise       ; KEY[1]          ;
+;  SW[7]    ; KEY[1]     ; -1.281 ; -1.976 ; Rise       ; KEY[1]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; KEY[1]     ; 8.284 ; 8.228 ; Rise       ; KEY[1]          ;
+;  LEDR[0]  ; KEY[1]     ; 7.646 ; 7.602 ; Rise       ; KEY[1]          ;
+;  LEDR[1]  ; KEY[1]     ; 7.615 ; 7.574 ; Rise       ; KEY[1]          ;
+;  LEDR[2]  ; KEY[1]     ; 7.589 ; 7.543 ; Rise       ; KEY[1]          ;
+;  LEDR[3]  ; KEY[1]     ; 7.650 ; 7.620 ; Rise       ; KEY[1]          ;
+;  LEDR[4]  ; KEY[1]     ; 7.959 ; 7.913 ; Rise       ; KEY[1]          ;
+;  LEDR[5]  ; KEY[1]     ; 7.644 ; 7.614 ; Rise       ; KEY[1]          ;
+;  LEDR[6]  ; KEY[1]     ; 8.284 ; 8.228 ; Rise       ; KEY[1]          ;
+;  LEDR[7]  ; KEY[1]     ; 7.666 ; 7.621 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; KEY[1]     ; 3.744 ; 3.815 ; Rise       ; KEY[1]          ;
+;  LEDR[0]  ; KEY[1]     ; 3.770 ; 3.852 ; Rise       ; KEY[1]          ;
+;  LEDR[1]  ; KEY[1]     ; 3.754 ; 3.832 ; Rise       ; KEY[1]          ;
+;  LEDR[2]  ; KEY[1]     ; 3.744 ; 3.815 ; Rise       ; KEY[1]          ;
+;  LEDR[3]  ; KEY[1]     ; 3.780 ; 3.865 ; Rise       ; KEY[1]          ;
+;  LEDR[4]  ; KEY[1]     ; 3.935 ; 4.033 ; Rise       ; KEY[1]          ;
+;  LEDR[5]  ; KEY[1]     ; 3.772 ; 3.856 ; Rise       ; KEY[1]          ;
+;  LEDR[6]  ; KEY[1]     ; 4.082 ; 4.205 ; Rise       ; KEY[1]          ;
+;  LEDR[7]  ; KEY[1]     ; 3.786 ; 3.867 ; Rise       ; KEY[1]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; LEDR[0]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[1]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[2]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[3]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[4]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[5]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[6]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[7]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++------------------------------------------------------------------------+
+; Input Transition Times                                                 ;
++---------------------+--------------+-----------------+-----------------+
+; Pin                 ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++---------------------+--------------+-----------------+-----------------+
+; SW[8]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[9]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[10]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[11]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[12]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[13]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[14]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[15]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[16]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[17]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[2]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[3]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[1]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[0]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[7]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[6]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[5]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[4]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[3]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[2]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[1]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[0]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_NCSO~       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++---------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LEDR[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[7]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.59e-09 V                   ; 2.37 V              ; -0.038 V            ; 0.188 V                              ; 0.093 V                              ; 3.06e-10 s                  ; 2.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.59e-09 V                  ; 2.37 V             ; -0.038 V           ; 0.188 V                             ; 0.093 V                             ; 3.06e-10 s                 ; 2.83e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LEDR[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[7]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.55e-07 V                   ; 2.35 V              ; -0.00881 V          ; 0.093 V                              ; 0.011 V                              ; 4.44e-10 s                  ; 3.77e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.55e-07 V                  ; 2.35 V             ; -0.00881 V         ; 0.093 V                             ; 0.011 V                             ; 4.44e-10 s                 ; 3.77e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LEDR[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; LEDR[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; LEDR[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; LEDR[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; LEDR[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; LEDR[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; LEDR[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; LEDR[7]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.26e-08 V                   ; 2.73 V              ; -0.0622 V           ; 0.148 V                              ; 0.088 V                              ; 2.68e-10 s                  ; 2.25e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.26e-08 V                  ; 2.73 V             ; -0.0622 V          ; 0.148 V                             ; 0.088 V                             ; 2.68e-10 s                 ; 2.25e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY[1]     ; KEY[1]   ; 292      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY[1]     ; KEY[1]   ; 292      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 72    ; 72   ;
+; Unconstrained Output Ports      ; 8     ; 8    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.4 Build 182 03/12/2014 SJ Web Edition
+    Info: Processing started: Sat Mar 25 13:06:25 2023
+Info: Command: quartus_sta Exp3c -c Exp3c
+Info: qsta_default_script.tcl version: #1
+Warning (20013): Ignored assignments for entity "de2i150" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name VIRTUAL_PIN ON -to FS_ADDR[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to CLOCK3_50 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CAS_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CKE -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CS_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[16] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[17] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[18] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[19] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[20] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[21] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[22] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[23] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[24] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[25] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[26] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[27] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[28] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[29] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[30] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[31] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_RAS_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_WE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to EEP_I2C_SCLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to EEP_I2C_SDAT -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_GTX_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_INT_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_LINK100 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_MDC -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_MDIO -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RST_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_COL -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_CRS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_DATA[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_DATA[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_DATA[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_DATA[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_DV -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_RX_ER -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_DATA[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_DATA[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_DATA[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_DATA[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_EN -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to ENET_TX_ER -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to FAN_CTRL -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_CE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_OE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_RESET_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_RY -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_WE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FL_WP_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[13] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[14] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[15] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[16] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[17] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[18] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[19] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[20] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[21] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[22] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[23] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[24] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[25] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[26] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_ADDR[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[13] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[14] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[15] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[16] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[17] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[18] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[19] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[20] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[21] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[22] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[23] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[24] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[25] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[26] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[27] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[28] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[29] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[30] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[31] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FS_DQ[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to G_SENSOR_INT1 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to G_SENSOR_SCLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to G_SENSOR_SDAT -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX1[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX2[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX3[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX4[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX5[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX6[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX7[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to I2C_SCLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to I2C_SDAT -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRDA_RXD -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to KEY[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to KEY[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to KEY[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to KEY[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DATA[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_EN -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LCD_ON -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_RS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_RW -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[13] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[14] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[15] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[16] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[17] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to PCIE_PERST_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD HCSL -to PCIE_REFCLK_P -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to PCIE_RX_P[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to PCIE_RX_P[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to PCIE_TX_P[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to PCIE_TX_P[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to PCIE_WAKE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_CMD -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DAT[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_WP_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SMA_CLKIN -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SMA_CLKOUT -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM0_CE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM1_CE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_ADSC_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_ADSP_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_ADV_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_BE[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_BE[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_BE[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_BE[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_GW_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_OE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SSRAM_WE_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[10] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[11] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[12] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[13] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[14] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[15] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[16] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[17] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[8] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[9] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_CLK27 -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_HS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_RESET_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_VS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_CTS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_RTS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_RXD -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_TXD -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_BLANK_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_CLK -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[4] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[5] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[6] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7] -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N -entity de2i150 was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity de2i150 was ignored
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Exp3c.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name KEY[1] KEY[1]
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.083
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.083             -24.661 KEY[1] 
+Info (332146): Worst-case hold slack is 0.705
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.705               0.000 KEY[1] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -15.000 KEY[1] 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.699
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.699             -21.588 KEY[1] 
+Info (332146): Worst-case hold slack is 0.642
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.642               0.000 KEY[1] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -15.000 KEY[1] 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.936
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.936              -7.487 KEY[1] 
+Info (332146): Worst-case hold slack is 0.327
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.327               0.000 KEY[1] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -12.352 KEY[1] 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 353 warnings
+    Info: Peak virtual memory: 4710 megabytes
+    Info: Processing ended: Sat Mar 25 13:06:28 2023
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

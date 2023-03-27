@@ -1,0 +1,136 @@
+$comment
+	File created using the following command:
+		vcd file Exp2b.msim.vcd -direction
+$end
+$date
+	Sat Mar 11 12:04:12 2023
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module Exp2b_vlg_vec_tst $end
+$var reg 1 ! v0 $end
+$var reg 1 " v1 $end
+$var reg 1 # v2 $end
+$var reg 1 $ v3 $end
+$var wire 1 % d0 [6] $end
+$var wire 1 & d0 [5] $end
+$var wire 1 ' d0 [4] $end
+$var wire 1 ( d0 [3] $end
+$var wire 1 ) d0 [2] $end
+$var wire 1 * d0 [1] $end
+$var wire 1 + d0 [0] $end
+$var wire 1 , d1 [6] $end
+$var wire 1 - d1 [5] $end
+$var wire 1 . d1 [4] $end
+$var wire 1 / d1 [3] $end
+$var wire 1 0 d1 [2] $end
+$var wire 1 1 d1 [1] $end
+$var wire 1 2 d1 [0] $end
+$var wire 1 3 sampler $end
+$scope module i1 $end
+$var wire 1 4 gnd $end
+$var wire 1 5 vcc $end
+$var wire 1 6 unknown $end
+$var tri1 1 7 devclrn $end
+$var tri1 1 8 devpor $end
+$var tri1 1 9 devoe $end
+$var wire 1 : v0~input_o $end
+$var wire 1 ; v1~input_o $end
+$var wire 1 < v2~input_o $end
+$var wire 1 = v3~input_o $end
+$var wire 1 > d0[0]~output_o $end
+$var wire 1 ? d0[1]~output_o $end
+$var wire 1 @ d0[2]~output_o $end
+$var wire 1 A d0[3]~output_o $end
+$var wire 1 B d0[4]~output_o $end
+$var wire 1 C d0[5]~output_o $end
+$var wire 1 D d0[6]~output_o $end
+$var wire 1 E d1[0]~output_o $end
+$var wire 1 F d1[1]~output_o $end
+$var wire 1 G d1[2]~output_o $end
+$var wire 1 H d1[3]~output_o $end
+$var wire 1 I d1[4]~output_o $end
+$var wire 1 J d1[5]~output_o $end
+$var wire 1 K d1[6]~output_o $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+1+
+1*
+1)
+1(
+1'
+1&
+1%
+02
+01
+00
+0/
+0.
+0-
+0,
+x3
+04
+15
+x6
+17
+18
+19
+0:
+0;
+0<
+0=
+1>
+1?
+1@
+1A
+1B
+1C
+1D
+0E
+0F
+0G
+0H
+0I
+0J
+0K
+$end
+#50000
+1!
+1"
+1#
+1$
+1:
+1;
+1<
+1=
+03
+#160000
+0!
+0"
+0#
+0$
+0:
+0;
+0<
+0=
+13
+#190000
+1"
+1;
+03
+#210000
+0"
+0;
+13
+#1000000
